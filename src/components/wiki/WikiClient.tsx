@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type {
   BotBait,
   BotEgg,
@@ -21,6 +21,8 @@ type WikiTab =
   | "pets"
   | "eggs"
   | "events";
+
+type SortOption = "name" | "rarity" | "price";
 
 interface WikiData {
   fish: BotFish[];
@@ -42,6 +44,8 @@ const TABS: { key: WikiTab; label: string; emoji: string }[] = [
   { key: "events", label: "Events", emoji: "⚡" },
 ];
 
+const TAB_KEYS = new Set<string>(TABS.map((t) => t.key));
+
 const RARITIES: ItemRarity[] = [
   "common",
   "uncommon",
@@ -51,6 +55,15 @@ const RARITIES: ItemRarity[] = [
   "mythic",
 ];
 
+const RARITY_ORDER: Record<ItemRarity, number> = {
+  common: 0,
+  uncommon: 1,
+  rare: 2,
+  epic: 3,
+  legendary: 4,
+  mythic: 5,
+};
+
 const RARITY_BADGE: Record<ItemRarity, string> = {
   common: "text-slate-400  bg-slate-400/10  border-slate-400/20",
   uncommon: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
@@ -59,6 +72,12 @@ const RARITY_BADGE: Record<ItemRarity, string> = {
   legendary: "text-amber-400  bg-amber-400/10  border-amber-400/20",
   mythic: "text-rose-400   bg-rose-400/10   border-rose-400/20",
 };
+
+const SORT_OPTIONS: { key: SortOption; label: string }[] = [
+  { key: "name", label: "Name" },
+  { key: "rarity", label: "Rarity" },
+  { key: "price", label: "Price" },
+];
 
 // ── Shared primitives ──────────────────────────────────────────────────────
 
@@ -144,6 +163,23 @@ function EffectRow({
   );
 }
 
+function TagList({ items, color }: { items: string[]; color: "green" | "red" }) {
+  if (items.length === 0) return null;
+  const cls =
+    color === "green"
+      ? "text-emerald-400 bg-emerald-400/10"
+      : "text-red-400 bg-red-400/10";
+  return (
+    <div className="flex flex-wrap gap-1">
+      {items.map((t) => (
+        <span key={t} className={`rounded px-1.5 py-0.5 text-xs ${cls}`}>
+          {t}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 // ── Card components ────────────────────────────────────────────────────────
 
 function FishCard({ item }: { item: BotFish }) {
@@ -151,10 +187,17 @@ function FishCard({ item }: { item: BotFish }) {
     <div className="border-border bg-surface flex h-full flex-col rounded-xl border p-4">
       <CardHeader emoji={item.emoji} name={item.name} rarity={item.rarity} />
       <CardDescription>{item.description}</CardDescription>
+      {(item.pros.length > 0 || item.cons.length > 0) && (
+        <div className="mb-3 flex flex-col gap-1.5">
+          <TagList items={item.pros} color="green" />
+          <TagList items={item.cons} color="red" />
+        </div>
+      )}
       <StatRow
         stats={[
           { label: "Sell", value: `🪙 ${item.price}` },
           { label: "XP", value: `+${item.xp}` },
+          { label: "Weight", value: `${item.weight}kg` },
         ]}
       />
     </div>
@@ -238,6 +281,12 @@ function PetCard({ item }: { item: BotPet }) {
     <div className="border-border bg-surface flex h-full flex-col rounded-xl border p-4">
       <CardHeader emoji={item.emoji} name={item.name} rarity={item.rarity} />
       <CardDescription>{item.description}</CardDescription>
+      {(item.pros.length > 0 || item.cons.length > 0) && (
+        <div className="mb-2 flex flex-col gap-1.5">
+          <TagList items={item.pros} color="green" />
+          <TagList items={item.cons} color="red" />
+        </div>
+      )}
       <div className="flex flex-col gap-1">
         {item.buffs.map((b, i) => (
           <EffectRow
@@ -257,6 +306,21 @@ function EggCard({ item }: { item: BotEgg }) {
     <div className="border-border bg-surface flex h-full flex-col rounded-xl border p-4">
       <CardHeader emoji={item.emoji} name={item.name} rarity={item.rarity} />
       <CardDescription>{item.description}</CardDescription>
+      {item.possiblePets.length > 0 && (
+        <div className="mb-3">
+          <p className="text-muted mb-1 text-xs">Possible pets</p>
+          <div className="flex flex-wrap gap-1">
+            {item.possiblePets.map((p) => (
+              <span
+                key={p}
+                className="rounded bg-overlay px-1.5 py-0.5 text-xs text-text"
+              >
+                {p}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <StatRow
         stats={[
           { label: "Hatch", value: `${item.hatchTimeMinutes}m` },
@@ -294,16 +358,72 @@ function EventCard({ item }: { item: BotEvent }) {
             isDebuff={e.value < 1}
           />
         ))}
-        <div className="border-border text-muted mt-1 border-t pt-2 text-xs">
-          Duration{" "}
-          <span className="text-text font-semibold">{durationMins}m</span>
+        <div className="border-border text-muted mt-1 flex items-center justify-between border-t pt-2 text-xs">
+          <span>
+            Duration{" "}
+            <span className="text-text font-semibold">{durationMins}m</span>
+          </span>
+          {item.schedule && (
+            <span>
+              Schedule{" "}
+              <span className="text-text font-semibold">{item.schedule}</span>
+            </span>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
+// ── Sorting helpers ─────────────────────────────────────────────────────────
+
+function getItemPrice(item: Record<string, unknown>): number {
+  if (typeof item.price === "number") return item.price;
+  if (typeof item.buyPrice === "number") return item.buyPrice;
+  return 0;
+}
+
+function getItemRarity(item: Record<string, unknown>): number {
+  if (typeof item.rarity === "string" && item.rarity in RARITY_ORDER)
+    return RARITY_ORDER[item.rarity as ItemRarity];
+  return -1;
+}
+
+function sortItems<T>(items: T[], sort: SortOption, desc: boolean): T[] {
+  const sorted = [...items];
+  sorted.sort((a, b) => {
+    let cmp = 0;
+    switch (sort) {
+      case "name":
+        cmp = (a as { name: string }).name.localeCompare(
+          (b as { name: string }).name,
+        );
+        break;
+      case "rarity":
+        cmp =
+          getItemRarity(a as Record<string, unknown>) -
+          getItemRarity(b as Record<string, unknown>);
+        break;
+      case "price":
+        cmp =
+          getItemPrice(a as Record<string, unknown>) -
+          getItemPrice(b as Record<string, unknown>);
+        break;
+    }
+    return desc ? -cmp : cmp;
+  });
+  return sorted;
+}
+
 // ── Main component ─────────────────────────────────────────────────────────
+
+function getInitialTab(): WikiTab {
+  if (typeof window === "undefined") return "fish";
+  const params = new URLSearchParams(window.location.search);
+  const t = params.get("tab");
+  if (t && TAB_KEYS.has(t)) return t as WikiTab;
+  return "fish";
+}
 
 export default function WikiClient({
   fish,
@@ -314,9 +434,29 @@ export default function WikiClient({
   eggs,
   events,
 }: WikiData) {
-  const [tab, setTab] = useState<WikiTab>("fish");
+  const [tab, setTab] = useState<WikiTab>(getInitialTab);
   const [search, setSearch] = useState("");
   const [rarity, setRarity] = useState<ItemRarity | "">("");
+  const [sort, setSort] = useState<SortOption>("name");
+  const [sortDesc, setSortDesc] = useState(false);
+
+  const updateTab = useCallback((newTab: WikiTab) => {
+    setTab(newTab);
+    setRarity("");
+    const url = new URL(window.location.href);
+    url.searchParams.set("tab", newTab);
+    window.history.replaceState({}, "", url.toString());
+  }, []);
+
+  useEffect(() => {
+    function onPopState() {
+      const params = new URLSearchParams(window.location.search);
+      const t = params.get("tab");
+      if (t && TAB_KEYS.has(t)) setTab(t as WikiTab);
+    }
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   const tabData = useMemo(
     () => ({ fish, rods, baits, potions, pets, eggs, events }),
@@ -346,8 +486,8 @@ export default function WikiClient({
         (it) => (it as { rarity?: string }).rarity === rarity,
       );
     }
-    return items;
-  }, [tab, search, rarity, tabData]);
+    return sortItems(items, sort, sortDesc);
+  }, [tab, search, rarity, tabData, sort, sortDesc]);
 
   const counts = useMemo(
     () =>
@@ -377,20 +517,44 @@ export default function WikiClient({
         </p>
       </motion.div>
 
-      {/* Search + rarity filter */}
+      {/* Search + rarity filter + sort */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center"
+        className="mb-4 flex flex-col gap-3"
       >
-        <input
-          type="text"
-          placeholder="Search…"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="border-border bg-surface text-text placeholder:text-muted focus:border-accent/40 min-w-0 flex-1 rounded-lg border px-4 py-2.5 text-sm focus:outline-none"
-        />
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="border-border bg-surface text-text placeholder:text-muted focus:border-accent/40 min-w-0 flex-1 rounded-lg border px-4 py-2.5 text-sm focus:outline-none"
+          />
+          <div className="flex items-center gap-1.5">
+            <span className="text-muted text-xs">Sort</span>
+            {SORT_OPTIONS.map((s) => (
+              <button
+                key={s.key}
+                onClick={() => {
+                  if (sort === s.key) {
+                    setSortDesc((d) => !d);
+                  } else {
+                    setSort(s.key);
+                    setSortDesc(false);
+                  }
+                }}
+                className={`rounded-md border px-2.5 py-1.5 text-xs font-medium transition-colors ${sort === s.key ? "border-accent/40 bg-accent/10 text-accent" : "border-border text-muted hover:text-text"}`}
+              >
+                {s.label}
+                {sort === s.key && (
+                  <span className="ml-1">{sortDesc ? "↓" : "↑"}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
         {tab !== "events" && (
           <div className="flex flex-wrap gap-1.5">
             <button
@@ -424,10 +588,7 @@ export default function WikiClient({
           return (
             <button
               key={key}
-              onClick={() => {
-                setTab(key);
-                setRarity("");
-              }}
+              onClick={() => updateTab(key)}
               className="relative flex flex-1 items-center justify-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors"
               style={{
                 color: isActive ? "var(--color-text)" : "var(--color-muted)",
@@ -449,6 +610,20 @@ export default function WikiClient({
           );
         })}
       </motion.div>
+
+      {/* Results count */}
+      <div className="text-muted mb-3 text-sm">
+        {filtered.length} of {counts[tab]} {tab}
+        {search && (
+          <span>
+            {" "}
+            matching &ldquo;{search}&rdquo;
+          </span>
+        )}
+        {rarity && (
+          <span className="ml-1 capitalize">({rarity})</span>
+        )}
+      </div>
 
       {/* Grid */}
       <AnimatePresence mode="wait">

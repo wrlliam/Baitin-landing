@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
-type TabKey = "fishing" | "economy" | "market" | "pets";
+type TabKey = "fishing" | "economy" | "market" | "pets" | "gambling";
 
 interface Command {
   name: string;
@@ -70,9 +70,21 @@ const COMMANDS: Record<TabKey, TabData> = {
       { name: "/hut workers", description: "Manage workers assigned to your fishing hut." },
     ],
   },
+  gambling: {
+    label: "Gambling",
+    emoji: "🎰",
+    commands: [
+      { name: "/blackjack", description: "Play a full hand of blackjack against the dealer. Hit, stand, double down, or split pairs — standard casino rules with interactive buttons." },
+      { name: "/slots", description: "Spin the slot machine and match symbols to win. Higher bets unlock rarer symbol pools with bigger multipliers." },
+      { name: "/coinflip", description: "Call heads or tails and wager your coins on a 50/50 flip." },
+      { name: "/dice", description: "Roll dice against the house. Predict over/under a target number to win based on the odds." },
+      { name: "/roulette", description: "Place a bet on red, black, odd, even, or a specific number. Payouts follow real roulette odds." },
+      { name: "/crash", description: "Watch the multiplier climb and cash out before it crashes. The longer you wait, the bigger the reward — or you lose it all." },
+    ],
+  },
 };
 
-const TAB_KEYS: TabKey[] = ["fishing", "economy", "market", "pets"];
+const TAB_KEYS: TabKey[] = ["fishing", "economy", "market", "pets", "gambling"];
 
 export default function CommandsTabs() {
   const [active, setActive] = useState<TabKey>("fishing");
