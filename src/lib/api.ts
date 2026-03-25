@@ -8,6 +8,9 @@ import type {
   BotPet,
   BotPotion,
   BotRod,
+  BotServer,
+  LeaderboardEntry,
+  LeaderboardType,
 } from "~/types/bot";
 
 async function apiFetch<T>(path: string): Promise<T> {
@@ -74,10 +77,26 @@ export async function getEvents() {
   return d.data;
 }
 
+export async function getServers() {
+  const d = await apiFetch<{
+    success: boolean;
+    data: { total: number; servers: BotServer[] };
+  }>("/servers");
+  return d.data;
+}
+
 export async function getCommands() {
   const d = await apiFetch<{
     success: boolean;
     data: { total: number; commands: BotCommand[] };
   }>("/commands?limit=100");
+  return d.data;
+}
+
+export async function getLeaderboard(type: LeaderboardType) {
+  const d = await apiFetch<{
+    success: boolean;
+    data: { total: number; entries: LeaderboardEntry[] };
+  }>(`/leaderboard/${type}`);
   return d.data;
 }

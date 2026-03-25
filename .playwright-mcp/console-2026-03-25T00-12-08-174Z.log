@@ -1,0 +1,43 @@
+[     648ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary loading={null}>
+        <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>
+                  <SegmentViewNode type="page" pagePath="/Documents...">
+                    <SegmentTrieNode>
+                    <HomePage>
+                      <Navbar>
+                        <motion.nav initial={{opacity:0,y:-12}} animate={{opacity:1,y:0}} ...>
+                          <nav className="sticky top..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                            <div
++                             className="mx-auto flex max-w-5xl items-center px-6 py-3"
+-                             className="mx-auto flex max-w-6xl items-center justify-evenly px-6 py-3"
+                            >
+                              <div
++                               className="hidden flex-1 items-center justify-between md:flex"
+-                               className="hidden items-center gap-6 md:flex"
+                              >
+                              <div
++                               className="flex items-center gap-2.5 md:ml-8"
+-                               className="flex items-center gap-2.5"
+                              >
+                            ...
+                      ...
+                  ...
+                ...
+ @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_595abfde._.js:2359

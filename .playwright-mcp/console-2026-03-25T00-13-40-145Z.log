@@ -1,0 +1,1233 @@
+[     375ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary loading={null}>
+        <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>
+                  <SegmentViewNode type="page" pagePath="/Documents...">
+                    <SegmentTrieNode>
+                    <HomePage>
+                      <Navbar>
+                        <motion.nav initial={{opacity:0,y:-12}} animate={{opacity:1,y:0}} ...>
+                          <nav className="sticky top..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                            <div
++                             className="relative mx-auto flex max-w-6xl items-center justify-center px-6 py-3"
+-                             className="mx-auto flex max-w-6xl items-center justify-evenly px-6 py-3"
+                            >
+                              <div
++                               className="hidden items-center gap-10 md:flex"
+-                               className="hidden items-center gap-6 md:flex"
+                              >
+                              <div
++                               className="flex items-center gap-2.5 md:absolute md:right-6"
+-                               className="flex items-center gap-2.5"
+                              >
+                            ...
+                      ...
+                  ...
+                ...
+ @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_595abfde._.js:2359
+[  278025ms] [WARNING] Warning: Failed to re-render. We will retry on the next Fast Refresh event.
+Error: ❌ Attempted to access a server-side environment variable on the client @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_compiled_f2204e3e._.js:879
+[  279145ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=fsnpp:0
+[  279265ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=fsnpp:0
+[  279338ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=fsnpp:0
+[  279418ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=fsnpp:0
+[  279558ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  279703ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:540:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:603:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:667:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  282621ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  282714ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  313476ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  313617ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  320123ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  320131ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  320714ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  320792ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  330080ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  330086ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  330526ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  330618ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  446690ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  446700ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  447159ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  447245ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  459431ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  459439ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  459865ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  459986ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  462814ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  462821ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  462826ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  462827ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  463465ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  463573ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  464340ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  464347ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  464776ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  464856ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  468296ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  468305ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  468771ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  468842ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  469928ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  469935ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  470281ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  470347ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  471854ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  471856ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  471883ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  471888ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  471894ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  471897ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  472585ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  472710ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  475851ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  475859ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  476406ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  476544ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  479023ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  479031ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  479453ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  479551ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  480506ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  480514ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  480952ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  481065ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  667616ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  667624ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  668162ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  668235ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  670062ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  670070ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  670442ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  670514ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  675820ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  675827ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  676332ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  676408ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  677260ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__8ab22692._.js:34
+[  677267ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2842
+[  677720ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  677786ms] Error: Invalid environment variables
+    at onValidationError (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:104:15)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:110:16)
+    at createEnv (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:157:220)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:473:223)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:545:171)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:608:178)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[root-of-the-server]__00ce5970._.js:672:47)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:7837:215)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at getOrInstantiateModuleFromParent (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:725:12)
+    at Context.esmImport [as i] (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:215:20)
+    at __TURBOPACK__module__evaluation__ (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/d62ba_bde6b751._.js:8892:1839)
+    at instantiateModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:702:9)
+    at instantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:730:12)
+    at getOrInstantiateRuntimeModule (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:743:12)
+    at Object.m (file:///Users/will/Documents/d/baitin-web/.next/server/chunks/ssr/[turbopack]_runtime.js:752:18)
+    at Object.<anonymous> (file:///Users/will/Documents/d/baitin-web/.next/server/app/page.js:12:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/will/Documents/d/baitin-web/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+[  682208ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  683211ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  684213ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  685215ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  686217ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  691219ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  696221ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  701224ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  706227ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  711229ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  716233ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  721235ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  726238ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  731241ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  736244ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  741248ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  746251ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  751255ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  756257ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  761261ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  766265ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  771268ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  776274ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  781277ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250
+[  786282ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/d62ba_next_dist_client_1df0638f._.js:2250

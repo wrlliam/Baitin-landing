@@ -111,6 +111,13 @@ export interface CommandOption {
   choices?: Array<{ name: string; value: string }>;
 }
 
+export interface BotServer {
+  id: string;
+  name: string;
+  memberCount: number;
+  icon: string | null;
+}
+
 export interface BotCommand {
   name: string;
   description: string;
@@ -119,4 +126,14 @@ export interface BotCommand {
   adminOnly: boolean;
   devOnly: boolean;
   options: CommandOption[];
+}
+
+export type LeaderboardType = "catches" | "level" | "money";
+
+export interface LeaderboardEntry {
+  rank: number;
+  userId: string;
+  username: string;
+  avatar: string | null;
+  value: number;
 }

@@ -8,7 +8,12 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    BOT_API_URL: z.string().default("https://fishing.bnhm.dev"),
+    BOT_API_URL: z.string().default("http://localhost:3000"),
+    DATABASE_URL: z.string(),
+    DISCORD_CLIENT_ID: z.string(),
+    DISCORD_CLIENT_SECRET: z.string(),
+    BETTER_AUTH_SECRET: z.string(),
+    BOT_API_SECRET: z.string(),
   },
 
   /**
@@ -32,6 +37,11 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     BOT_API_URL: process.env.BOT_API_URL,
+    DATABASE_URL: process.env.DATABASE_URL,
+    DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
+    DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
+    BOT_API_SECRET: process.env.BOT_API_SECRET,
     NEXT_PUBLIC_DISCORD_INVITE_URL: process.env.NEXT_PUBLIC_DISCORD_INVITE_URL,
   },
   /**
