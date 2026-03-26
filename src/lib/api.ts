@@ -14,10 +14,18 @@ import type {
 } from "~/types/bot";
 
 async function apiFetch<T>(path: string): Promise<T> {
-  const res = await fetch(`${env.BOT_API_URL}/api${path}`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error(`Bot API ${path} → ${res.status}`);
+  const url = `${env.NEXT_PUBLIC_BOT_API_URL}/api${path}`;
+  let res: Response;
+  try {
+    res = await fetch(url, { cache: "no-store" });
+  } catch (err) {
+    console.error(`[api] fetch failed: ${url}`, err);
+    throw err;
+  }
+  if (!res.ok) {
+    console.error(`[api] ${url} → ${res.status}`);
+    throw new Error(`Bot API ${path} → ${res.status}`);
+  }
   return res.json() as Promise<T>;
 }
 
