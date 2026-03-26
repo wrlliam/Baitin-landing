@@ -133,7 +133,7 @@ export type LeaderboardType = "catches" | "level" | "money";
 export interface LeaderboardEntry {
   rank: number;
   userId: string;
-  username: string;
+  username: string | null;
   avatar: string | null;
   value: number;
 }

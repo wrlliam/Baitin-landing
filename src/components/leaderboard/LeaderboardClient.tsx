@@ -43,10 +43,11 @@ function Avatar({
   avatar,
   userId,
 }: {
-  username: string;
+  username: string | null;
   avatar: string | null;
   userId: string;
 }) {
+  const name = username ?? "Unknown";
   const src = avatar
     ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}.webp?size=64`
     : null;
@@ -55,7 +56,7 @@ function Avatar({
     return (
       <Image
         src={src}
-        alt={username}
+        alt={name}
         width={36}
         height={36}
         className="h-9 w-9 rounded-full object-cover"
@@ -71,12 +72,12 @@ function Avatar({
     "bg-emerald-500",
     "bg-rose-500",
   ];
-  const color = colors[username.charCodeAt(0) % colors.length];
+  const color = colors[name.charCodeAt(0) % colors.length];
   return (
     <span
       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${color}`}
     >
-      {username[0]?.toUpperCase() ?? "?"}
+      {name[0]?.toUpperCase() ?? "?"}
     </span>
   );
 }
@@ -106,7 +107,7 @@ function LeaderboardRow({
       <RankBadge rank={entry.rank} />
       <Avatar username={entry.username} avatar={entry.avatar} userId={entry.userId} />
       <span className="min-w-0 flex-1 truncate font-medium text-text">
-        {entry.username}
+        {entry.username ?? "Unknown"}
       </span>
       <span className="shrink-0 text-sm font-semibold text-accent">
         {formatValue(type, entry.value)}
