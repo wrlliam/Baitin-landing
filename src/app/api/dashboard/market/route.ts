@@ -26,7 +26,7 @@ export async function POST(req: Request) {
   const discordId = (session.user as { discordId?: string }).discordId;
   if (!discordId) return NextResponse.json({ error: "No Discord account" }, { status: 400 });
 
-  const body = await req.json();
+  const body = await req.json() as Record<string, unknown>;
   try {
     const data = await botMutate("POST", "/market/list", discordId, body);
     return NextResponse.json(data);

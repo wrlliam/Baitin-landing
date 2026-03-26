@@ -26,7 +26,7 @@ export default async function MarketPage() {
     <MarketClient
       initialListings={(marketRes?.data?.listings as never[]) ?? []}
       initialTotal={marketRes?.data?.total ?? 0}
-      inventory={(sackRes?.data as InventoryItem[]) ?? []}
+      inventory={sackRes?.data ?? []}
       discordId={discordId}
     />
   );

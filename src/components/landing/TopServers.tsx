@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import { type BotServer } from "~/types/bot";
 
 interface TopServersProps {
@@ -21,12 +22,13 @@ function ServerCard({ server, index }: { server: BotServer; index: number }) {
     >
       <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full">
         {server.icon ? (
-          <img
+          <Image
             src={server.icon}
             alt={server.name}
             width={32}
             height={32}
             className="h-full w-full object-cover"
+            unoptimized
           />
         ) : (
           <div

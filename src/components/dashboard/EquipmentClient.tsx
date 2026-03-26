@@ -106,7 +106,7 @@ export default function EquipmentClient({
 
   function openRodBrowser() {
     setShowRods(true);
-    if (!ownedRods) loadRods();
+    if (!ownedRods) void loadRods();
   }
 
   if (!equipment) {
