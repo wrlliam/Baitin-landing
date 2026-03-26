@@ -9,11 +9,11 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
     BOT_API_URL: z.string().default("http://localhost:3000"),
-    DATABASE_URL: z.string().optional(),
-    DISCORD_CLIENT_ID: z.string().optional(),
-    DISCORD_CLIENT_SECRET: z.string().optional(),
-    BETTER_AUTH_SECRET: z.string().optional(),
-    BOT_API_SECRET: z.string().optional(),
+    DATABASE_URL: z.string().default(""),
+    DISCORD_CLIENT_ID: z.string().default(""),
+    DISCORD_CLIENT_SECRET: z.string().default(""),
+    BETTER_AUTH_SECRET: z.string().default(""),
+    BOT_API_SECRET: z.string().default(""),
   },
 
   /**
