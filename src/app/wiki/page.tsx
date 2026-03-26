@@ -12,6 +12,8 @@ import {
   getRods,
 } from "~/lib/api";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Wiki — Baitin 🎣",
   description:

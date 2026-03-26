@@ -4,6 +4,8 @@ import Footer from "~/components/landing/Footer";
 import Navbar from "~/components/landing/Navbar";
 import { getCommands } from "~/lib/api";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Commands — Baitin 🎣",
   description: "Full reference of all Baitin slash commands, organized by category.",
