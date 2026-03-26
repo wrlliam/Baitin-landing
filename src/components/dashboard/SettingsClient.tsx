@@ -3,6 +3,7 @@
 import { CheckIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useRef, useState } from "react";
+import { Switch } from "~/components/ui/Switch";
 import PageShell from "./PageShell";
 
 export interface UserSettings {
@@ -143,24 +144,14 @@ function Toggle({
   checked: boolean;
   onChange: () => void;
 }) {
+  const id = label.toLowerCase().replace(/\s+/g, "-");
   return (
     <div className="flex items-center justify-between rounded-2xl border border-border bg-surface p-4">
-      <div>
+      <label htmlFor={id} className="cursor-pointer">
         <p className="text-sm font-medium text-text">{label}</p>
         <p className="text-xs text-muted">{description}</p>
-      </div>
-      <button
-        role="switch"
-        aria-checked={checked}
-        onClick={onChange}
-        className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${checked ? "bg-accent" : "bg-surface-3"}`}
-      >
-        <motion.span
-          animate={{ x: checked ? 22 : 3 }}
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-          className="block h-4 w-4 rounded-full bg-white shadow"
-        />
-      </button>
+      </label>
+      <Switch id={id} checked={checked} onCheckedChange={onChange} />
     </div>
   );
 }
