@@ -48,9 +48,7 @@ function Avatar({
   userId: string;
 }) {
   const name = username ?? "Unknown";
-  const src = avatar
-    ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}.webp?size=64`
-    : null;
+  const src = avatar ?? null;
 
   if (src) {
     return (
