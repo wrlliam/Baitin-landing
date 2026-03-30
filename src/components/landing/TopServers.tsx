@@ -52,7 +52,7 @@ export default function TopServers({ servers }: TopServersProps) {
 
   return (
     <section className="py-7 sm:py-20">
-      <div className="mx-auto max-w-6xl px-8 sm:px-10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-10">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -62,7 +62,7 @@ export default function TopServers({ servers }: TopServersProps) {
         >
           Trusted by servers everywhere
         </motion.p>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
           {servers.map((server, i) => (
             <ServerCard key={server.id} server={server} index={i} />
           ))}

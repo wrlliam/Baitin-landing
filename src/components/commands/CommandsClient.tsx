@@ -39,7 +39,7 @@ export default function CommandsClient({ commands }: Props) {
   }, [commands]);
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-16">
+    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16">
       {/* Page header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -50,10 +50,10 @@ export default function CommandsClient({ commands }: Props) {
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
           Reference
         </p>
-        <h1 className="mb-4 text-5xl font-extrabold tracking-tight">
+        <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
           Slash Commands
         </h1>
-        <p className="mx-auto max-w-md text-lg text-muted">
+        <p className="mx-auto max-w-md text-base text-muted sm:text-lg">
           Every command available in Baitin, organized by category.
         </p>
       </motion.div>

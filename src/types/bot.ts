@@ -128,12 +128,16 @@ export interface BotCommand {
   options: CommandOption[];
 }
 
-export type LeaderboardType = "catches" | "level" | "money";
+export type LeaderboardType = "catches" | "level" | "coins";
 
 export interface LeaderboardEntry {
   rank: number;
   userId: string;
   username: string | null;
   avatar: string | null;
-  value: number;
+  coins: number;
+  level: number;
+  xp: number;
+  totalCatches: number;
+  anonymous: boolean;
 }

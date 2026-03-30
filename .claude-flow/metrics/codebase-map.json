@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-03-27T23:56:20.044Z",
+  "projectRoot": "/Users/will/Documents/d/baitin-web",
+  "structure": {
+    "hasPackageJson": true,
+    "hasTsConfig": true,
+    "hasClaudeConfig": true,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1774655780044
+}

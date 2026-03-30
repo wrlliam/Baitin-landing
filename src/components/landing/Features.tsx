@@ -126,7 +126,7 @@ function CommandPreview() {
 
   return (
     <section className="py-20 sm:py-24">
-      <div className="mx-auto max-w-4xl px-8 sm:px-10">
+      <div className="mx-auto max-w-4xl px-4 sm:px-10">
         <Reveal>
           <p className="mb-2 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">Commands</p>
           <h2 className="mb-12 text-center text-2xl font-bold tracking-tight sm:text-3xl">Everything at a slash</h2>
@@ -191,9 +191,9 @@ export default function Features() {
     <>
       {/* Value props — compact 4-column */}
       <section className="border-y border-border bg-surface">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-border px-2 sm:grid-cols-4 sm:px-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-border px-0 sm:grid-cols-4 sm:px-4">
           {VALUE_PROPS.map((prop, i) => (
-            <Reveal key={prop.title} delay={i * 0.08} className="px-6 py-10 text-center sm:px-8 sm:py-12">
+            <Reveal key={prop.title} delay={i * 0.08} className="px-4 py-8 text-center sm:px-8 sm:py-12">
               <span className="mb-4 inline-block text-2xl">{prop.emoji}</span>
               <h3 className="mb-2 text-sm font-semibold text-text">{prop.title}</h3>
               <p className="text-xs leading-relaxed text-muted">{prop.desc}</p>
@@ -203,8 +203,8 @@ export default function Features() {
       </section>
 
       {/* Bento feature grid */}
-      <section id="features" className="py-32 sm:py-40">
-        <div className="mx-auto max-w-6xl px-8 sm:px-10">
+      <section id="features" className="py-20 sm:py-40">
+        <div className="mx-auto max-w-6xl px-4 sm:px-10">
           <Reveal>
             <p className="mb-2 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">Features</p>
             <h2 className="mb-16 text-center text-2xl font-bold tracking-tight sm:text-3xl">Everything you need to fish</h2>
@@ -269,14 +269,14 @@ export default function Features() {
       </section>
 
       {/* How it works */}
-      <section className="border-y border-border bg-surface py-32 sm:py-40">
-        <div className="mx-auto max-w-4xl px-8 sm:px-10">
+      <section className="border-y border-border bg-surface py-20 sm:py-40">
+        <div className="mx-auto max-w-4xl px-4 sm:px-10">
           <Reveal>
             <p className="mb-2 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">How it works</p>
             <h2 className="mb-16 text-center text-2xl font-bold tracking-tight sm:text-3xl">Get started in three steps</h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-14 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-14">
             {STEPS.map((s, i) => (
               <Reveal key={s.step} delay={i * 0.1}>
                 <div className="text-center">
@@ -296,8 +296,8 @@ export default function Features() {
       <CommandPreview />
 
       {/* Bottom CTA */}
-      <section className="py-32 sm:py-40">
-        <div className="mx-auto max-w-2xl px-8 sm:px-10 text-center">
+      <section className="py-20 sm:py-40">
+        <div className="mx-auto max-w-2xl px-4 sm:px-10 text-center">
           <Reveal>
             <h2 className="mb-6 text-2xl font-bold tracking-tight sm:text-3xl">
               Ready to start fishing?

@@ -17,7 +17,7 @@ interface HeroProps {
 
 export default function Hero({ fishCount }: HeroProps) {
   return (
-    <section className="relative py-14 sm:py-44 lg:py-56">
+    <section className="relative py-20 sm:py-44 lg:py-56">
       {/* Grid backdrop */}
       <div className="grid-bg absolute inset-0 opacity-50" />
 
@@ -51,7 +51,7 @@ export default function Hero({ fishCount }: HeroProps) {
         {/* Headline */}
         <motion.h1
           {...stagger(0.12)}
-          className="mb-8 text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-6xl"
+          className="mb-6 text-3xl leading-[1.1] font-bold tracking-tight sm:mb-8 sm:text-5xl lg:text-6xl"
         >
           The fishing bot your{" "}
           <span className="gradient-text">Discord server</span> deserves
@@ -60,7 +60,7 @@ export default function Hero({ fishCount }: HeroProps) {
         {/* Subtitle */}
         <motion.p
           {...stagger(0.2)}
-          className="text-muted mx-auto mb-12 max-w-lg text-sm leading-relaxed sm:text-base"
+          className="text-muted mx-auto mb-8 max-w-lg text-sm leading-relaxed sm:mb-12 sm:text-base"
         >
           Cast lines, catch rare fish, build a thriving economy, raise pets, and
           compete in live events — all from Discord.
@@ -109,7 +109,7 @@ export default function Hero({ fishCount }: HeroProps) {
         {/* Stats */}
         <motion.div
           {...stagger(0.38)}
-          className="divide-border border-border bg-surface mt-24 inline-flex items-center divide-x rounded-xl border px-1"
+          className="divide-border border-border bg-surface mt-14 inline-flex items-center divide-x rounded-xl border px-1 sm:mt-24"
         >
           {[
             { value: fishCount > 0 ? `${fishCount}+` : "210+", label: "Fish" },

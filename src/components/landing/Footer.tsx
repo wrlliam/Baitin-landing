@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-20">
-      <div className="mx-auto max-w-6xl px-8 sm:px-10">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t border-border py-12 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-10">
+        <div className="grid gap-8 grid-cols-2 sm:gap-10 lg:grid-cols-4">
           <div>
             <p className="mb-3 text-sm font-bold text-text">🎣 Baitin</p>
             <p className="max-w-xs text-xs leading-relaxed text-muted">
@@ -35,7 +35,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-16 flex items-center justify-between border-t border-border pt-10">
+        <div className="mt-10 flex items-center justify-between border-t border-border pt-8 sm:mt-16 sm:pt-10">
           <p className="text-[11px] text-muted-2">&copy; {new Date().getFullYear()} Baitin. All rights reserved.</p>
           <a href="https://github.com/wrlliam/baitin" target="_blank" rel="noopener noreferrer" className="text-muted transition-colors hover:text-text" aria-label="GitHub">
             <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor">

@@ -22,7 +22,7 @@ export default async function LeaderboardPage() {
   const [catchesData, levelData, moneyData] = await Promise.all([
     safe(() => getLeaderboard("catches"), { total: 0, entries: [] }),
     safe(() => getLeaderboard("level"),   { total: 0, entries: [] }),
-    safe(() => getLeaderboard("money"),   { total: 0, entries: [] }),
+    safe(() => getLeaderboard("coins"),   { total: 0, entries: [] }),
   ]);
 
   return (

@@ -24,7 +24,12 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       className="border-border bg-bg/80 sticky top-0 z-50 border-b backdrop-blur-xl"
     >
-      <div className="mx-auto flex max-w-6xl items-center px-8 py-4">
+      <div className="mx-auto flex max-w-6xl items-center px-4 py-3 sm:px-8 sm:py-4">
+        {/* Brand — visible on mobile */}
+        <Link href="/" className="mr-auto text-sm font-bold text-text md:hidden">
+          Baitin
+        </Link>
+
         {/* Left  — Nav links */}
         <div className="hidden flex-1 items-center justify-center gap-8 md:flex">
           {NAV_LINKS.map(({ label, href }) => (
@@ -116,7 +121,7 @@ export default function Navbar() {
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="border-border overflow-hidden border-t md:hidden"
           >
-            <div className="flex flex-col gap-0.5 px-6 py-3">
+            <div className="flex flex-col gap-0.5 px-4 py-3">
               {NAV_LINKS.map(({ label, href }) => (
                 <Link
                   key={label}

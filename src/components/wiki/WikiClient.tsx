@@ -498,7 +498,7 @@ export default function WikiClient({
   );
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -509,7 +509,7 @@ export default function WikiClient({
         <p className="text-accent mb-3 text-sm font-semibold tracking-widest uppercase">
           Wiki
         </p>
-        <h1 className="mb-4 text-5xl font-extrabold tracking-tight">
+        <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
           Game Database
         </h1>
         <p className="text-muted mx-auto max-w-md">
@@ -581,7 +581,7 @@ export default function WikiClient({
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.15 }}
-        className="border-border bg-surface mb-8 flex overflow-x-auto rounded-xl border p-1"
+        className="border-border bg-surface mb-6 flex overflow-x-auto rounded-xl border p-1 sm:mb-8"
       >
         {TABS.map(({ key, label, emoji }) => {
           const isActive = tab === key;
